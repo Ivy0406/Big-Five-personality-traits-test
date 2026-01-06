@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import TraitHero from "../components/result/TraitHero";
 import ShortButton from "../components/ui/ShortButton";
 import getTraitsData from "../data/traits-data";
 
 function Home() {
   const [traitsData, setTraitsData] = useState(null);
+  const navigate = useNavigate();
+
+  const startQuiz = ()=>{
+    navigate("./quiz");
+  }
 
   useEffect(() => {
     const loadData = async () => {
@@ -68,7 +74,7 @@ function Home() {
             <p className="text-[16px] leading-normal text-text-sub w-full max-w-150 lg:w-112.5">
               {description}
             </p>
-            <ShortButton className="lg:min-w-82.5" />
+            <ShortButton className="lg:min-w-82.5" onClick={startQuiz} />
           </div>
         </div>
       </div>
