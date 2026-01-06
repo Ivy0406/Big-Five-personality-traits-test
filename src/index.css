@@ -4,7 +4,7 @@
   --font-sans: "Noto Sans TC" ,"PT Sans" , sans-serif;
 
   --color-primary: #4F61FF;
-  --color-primary-hover: #4338CA;
+  --color-primary-focus: #3B4CEB;
   --color-text-main: #000000DE;
   --color-text-sub: #00000098;
   --color-neutral-main: #FFFFFF;
@@ -13,7 +13,7 @@
 
 @layer components {
   .material-icons {
-    font-size: inherit !important;
+    font-size: inherit;
     vertical-align: middle;
   }
 }
