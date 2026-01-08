@@ -1,8 +1,8 @@
-import IconButton from "../components/ui/IconButton";
-import LongButton from "../components/ui/LongButton";
-import Question from "../components/quiz/Question";
-import OptionList from "../components/quiz/OptionList";
-import { useQuizData } from "../components/quiz/useQuizData";
+import IconButton from "../ui/IconButton";
+import LongButton from "../ui/LongButton";
+import Question from "./Question";
+import OptionList from "./OptionList";
+import { useQuizData } from "./useQuizData";
 
 const Quiz = () => {
   const {
