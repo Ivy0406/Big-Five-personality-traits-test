@@ -17,6 +17,8 @@ const Quiz = () => {
     handleNext,
   } = useQuizData();
 
+  const isLastQuestion = currentIndex === totalQuestions - 1;
+
   if (loading) {
     return (
       <div className="w-full h-screen flex items-center justify-center">
@@ -56,6 +58,7 @@ const Quiz = () => {
             onClick={handleNext} 
             disabled={!selectedOption}
           >
+            {isLastQuestion ? "計算結果" : "下一題"}
           </LongButton>
         </div>
       </div>
