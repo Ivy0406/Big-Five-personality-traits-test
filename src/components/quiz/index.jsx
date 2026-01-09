@@ -11,10 +11,10 @@ const Quiz = () => {
     currentIndex,
     totalQuestions,
     selectedOption,
-    traitName,
-    handleOptionSelect,
-    handlePrev,
-    handleNext,
+    traitNames,
+    handleOptionSelected,
+    handlePrevQuestion,
+    handleNextQuestion,
   } = useQuizData();
 
   const isLastQuestion = currentIndex === totalQuestions - 1;
@@ -29,14 +29,15 @@ const Quiz = () => {
 
 
   return (
-  <main className="w-full h-screen flex flex-col lg:flex-row">
-    <IconButton onClick={handlePrev} />
+  <main className="relative w-full h-screen flex flex-col xl:flex-row">
+    <IconButton onClick={handlePrevQuestion} className="absolute" />
     {/* 題目區 */}
       <div className="flex-1 bg-primary/8 h-full flex flex-col justify-between pb-12">
         
         <Question 
           question={currentQuestion.problem} 
-          traitName={traitName} 
+          traitNames={traitNames} 
+          className="h-full pt-24 xl:pt-0"
         />
       </div>
       {/* 右側：作答區 */}
@@ -51,11 +52,11 @@ const Quiz = () => {
           <OptionList
             options={currentQuestion.options}
             selectedOption={selectedOption}
-            handleOptionSelect={handleOptionSelect}
+            onSelect={handleOptionSelected}
           />
           
           <LongButton 
-            onClick={handleNext} 
+            onClick={handleNextQuestion} 
             disabled={!selectedOption}
           >
             {isLastQuestion ? "計算結果" : "下一題"}

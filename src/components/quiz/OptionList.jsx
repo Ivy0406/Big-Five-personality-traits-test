@@ -1,14 +1,14 @@
 import OptionItem from "./OptionItem";
 
-const OptionList = ({options, selectedOption, handleOptionSelected}) => {
+const OptionList = ({options, selectedOption, onSelect}) => {
   return (
-    <ul>
+    <ul className="flex flex-col gap-9 px-24 xl:px-18">
       {options.map((option) => (
         <OptionItem
           key={option.fraction} 
           option={option}
           isSelected={selectedOption?.fraction === option.fraction}
-          onClick={() => handleOptionSelected(option)}
+          onClick={() => onSelect(option)}
         />
       ))}
     </ul>

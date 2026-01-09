@@ -88,8 +88,8 @@ export const useQuizData = () => {
   };
 
   const traitNames = traitsData ? {
-    zh: traitsData.name.zh.split("(")[0].trim(),
-    en: traitsData.name.en.split("(")[0].trim()
+    zh: traitsData?.name.zh.split("(")[0].trim(),
+    en: traitsData?.name.en.split("(")[0].trim()
   } : { zh: "", en: "" };
 
   return {

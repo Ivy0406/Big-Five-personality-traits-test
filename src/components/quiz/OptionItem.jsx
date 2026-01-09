@@ -7,7 +7,7 @@ const OptionItem = ({ option, isSelected, onClick }) => {
   return (
     <li
       onClick={onClick}
-      className={`flex items-start lg:items-center cursor-pointer group ${
+      className={`flex items-start xl:items-center cursor-pointer group ${
         isSelected ? "text-primary" : "text-text-main"
       }`}
     >
@@ -18,7 +18,7 @@ const OptionItem = ({ option, isSelected, onClick }) => {
       >
         {isSelected && <div className="w-4 h-4 bg-primary rounded-full" />}
       </div>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col xl:flex-row">
         <p className="font-bold text-xl leading-normal">{title}</p>
         <p className="text-xl leading-normal">{description}</p>
       </div>

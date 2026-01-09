@@ -1,7 +1,7 @@
 
-const Question = ({ question, traitName }) => {
+const Question = ({ question, traitNames , className=""}) => {
   return (
-    <div className="px-24 flex flex-col justify-end gap-50 lg:gap-112.25">
+    <div className={`px-24 flex flex-col justify-end gap-30 xl:gap-112.25 ${className}`}>
       <div className="flex flex-col gap-4">
         <p className="text-[120px] italic font-en text-text-main">Q</p>
         <p className="text-5xl font-light text-text-main pl-12 h-28.5">
@@ -11,10 +11,10 @@ const Question = ({ question, traitName }) => {
 
       <div>
         <p className="text-text-minor text-[16px] leading-normal">
-          {traitName.zh}
+          {traitNames?.zh}
         </p>
         <p className="text-text-minor text-[12px] leading-normal">
-          {traitName.en}
+          {traitNames?.en}
         </p>
       </div>
     </div>
