@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Noto Sans TC" ,"PT Sans" , sans-serif;
-
+  --font-sans: "Noto Sans TC", sans-serif;
+  --font-en: "PT Sans", sans-serif;
   --color-primary: #4F61FF;
   --color-primary-focus: #3B4CEB;
   --color-text-main: #000000DE;
   --color-text-sub: #00000098;
+  --color-text-minor: #00000060;
   --color-neutral-main: #FFFFFF;
   --color-neutral-sub: #FFFFFFDE;
 }
