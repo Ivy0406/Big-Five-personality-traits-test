@@ -83,6 +83,7 @@ export const useQuizData = () => {
           score: selectedOption.fraction,
         },
       };
+      navigate("/result", { state: { answers: finalAnswers } });
       console.log(finalAnswers);
     }
   };
