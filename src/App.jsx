@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from "./pages/Home";
+import Home from "./components/home/Home";
 import Quiz from "./components/quiz";
-import Result from "./pages/Result";
+import Result from "./components/result";
 
 function App() {
 
