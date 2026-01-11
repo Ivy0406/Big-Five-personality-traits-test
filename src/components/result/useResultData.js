@@ -81,6 +81,32 @@ export const useResultData = () => {
     }
   }, [traitsData]);
 
+
+  const nextedData = useMemo(()=>{
+    if(!traitsData?.traits || !targetCategory){
+      return {isLast:false, nextCategoryKey:null ,nextLabel: ""};
+    }
+    const enCategories = traitsData.traits.en;
+    const zhCategories = traitsData.traits.zh;
+
+    const currentIndex = enCategories.indexOf(targetCategory);
+    const isLast = currentIndex === enCategories.length -1;
+    const nextCategoryKey = isLast ? null : enCategories[currentIndex +1];
+    const nextLabel = isLast ? "" : zhCategories[currentIndex +1];
+    return {isLast, nextCategoryKey ,nextLabel};
+
+  },[traitsData, targetCategory]);
+
+  const handleNextCategory = () => {
+    const { isLast, nextCategoryKey } = nextedData;
+    if(isLast){
+      navigate("/");
+    }else{
+      setTargetCategory(nextCategoryKey);
+    }
+  };
+
+
   const currentRenderData = calculatedResuts?.[targetCategory];
 
   return {
@@ -96,6 +122,9 @@ export const useResultData = () => {
     },
     targetCategoryDescription: currentRenderData?.targetCategoryDescription,
     scoreLevel: currentRenderData?.scoreLevel,
-    resultDescription: currentRenderData?.resultDescription
+    resultDescription: currentRenderData?.resultDescription,
+    isLastCategory: nextedData.isLast,
+    nextCategoryLabel: nextedData.nextLabel,
+    handleNextCategory,
   };
 };

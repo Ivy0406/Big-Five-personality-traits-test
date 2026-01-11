@@ -45,6 +45,9 @@ const Result = () => {
   targetCategoryDescription,
   scoreLevel,
   resultDescription,
+  isLastCategory,
+  nextCategoryLabel,
+  handleNextCategory,
 } = useResultData();
 
   if (loading) {
@@ -79,6 +82,9 @@ const Result = () => {
       <TraitScore
         scoreLevel={scoreLevel}
         description={resultDescription}
+        handleNextCategory = {handleNextCategory}
+        isLastCategory = {isLastCategory}
+        nextCategoryLabel = {nextCategoryLabel}
         className="flex-1"
       />
     </main>
