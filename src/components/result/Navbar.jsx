@@ -3,8 +3,6 @@ const Navbar = ({ options, activeKey, onSelect }) => {
     <ul className="flex justify-between gap-12">
       {options.map((option) => {
         const isActive = activeKey === option.key;
-        console.log("Navbar 接收到的 options:", options);
-        console.log("Navbar 接收到的 activeKey:", activeKey);
         return (
           <li
             key={option.key}

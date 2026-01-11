@@ -6,7 +6,6 @@ export const useResultData = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const rawAnswers = location.state?.answers;
-  console.log(rawAnswers);
   const [traitsData, setTraitsData] = useState(null);
   const [targetCategory, setTargetCategory] = useState(null);
 
