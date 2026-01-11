@@ -84,7 +84,6 @@ export const useQuizData = () => {
         },
       };
       navigate("/result", { state: { answers: finalAnswers } });
-      console.log(finalAnswers);
     }
   };
 

@@ -63,6 +63,7 @@ export const useResultData = () => {
         zhName: categoryKeysZh[index],
         enName: key,
         scoreLevel: level === "high" ? "高" : level === "middle" ? "中" : "低",
+        fullDescriptions: categoryDetails.description,
         targetCategoryDescription: categoryDetails.description.desc,
         resultDescription: categoryDetails.description[level],
       };
@@ -123,6 +124,7 @@ export const useResultData = () => {
     targetCategoryDescription: currentRenderData?.targetCategoryDescription,
     scoreLevel: currentRenderData?.scoreLevel,
     resultDescription: currentRenderData?.resultDescription,
+    fullDescriptions: currentRenderData?.fullDescriptions,
     isLastCategory: nextedData.isLast,
     nextCategoryLabel: nextedData.nextLabel,
     handleNextCategory,
