@@ -72,7 +72,7 @@ export const useResultData = () => {
   }, [traitsData, rawAnswers]);
 
   const categoriesList = useMemo(() => {
-    if (!traitsData.traits) {
+    if (!traitsData?.traits) {
       return [];
     } else {
       return traitsData.traits.en.map((categoryKey, index) => ({
@@ -88,15 +88,15 @@ export const useResultData = () => {
     loading: !traitsData || !calculatedResuts,
     categoriesList, 
     handleCategoryChange: (key) => setTargetCategory(key),
-    traitsNames: traitsData.name,
+    traitsNames: traitsData?.name,
     allCategoriesZh: traitsData?.traits.zh || [],
     allCategoriesEn: traitsData?.traits.en || [],
     targetCategory: {
-      en: currentRenderData.enName,
-      zh: currentRenderData.zhName,
+      en: currentRenderData?.enName,
+      zh: currentRenderData?.zhName,
     },
-    targetCategoryDescription: currentRenderData.targetCategoryDescription,
-    scoreLevel: currentRenderData.scoreLevel,
-    ResultDescription: currentRenderData.resultDescription
+    targetCategoryDescription: currentRenderData?.targetCategoryDescription,
+    scoreLevel: currentRenderData?.scoreLevel,
+    resultDescription: currentRenderData?.resultDescription
   };
 };

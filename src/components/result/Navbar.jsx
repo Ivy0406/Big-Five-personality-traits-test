@@ -1,9 +1,10 @@
-const Navbar = ({ options ,activeKey, onSelect}) => {
+const Navbar = ({ options, activeKey, onSelect }) => {
   return (
     <ul className="flex justify-between gap-12">
       {options.map((option) => {
         const isActive = activeKey === option.key;
-
+        console.log("Navbar 接收到的 options:", options);
+        console.log("Navbar 接收到的 activeKey:", activeKey);
         return (
           <li
             key={option.key}
@@ -11,14 +12,10 @@ const Navbar = ({ options ,activeKey, onSelect}) => {
             className={`
               w-fit h-8 text-neutral-main cursor-pointer 
               hover:font-bold hover:border-b-4 hover:border-primary 
-              ${
-                isActive
-                  ? "font-bold border-b-4 border-primary" 
-                  : "font-light"                          
-              }
+              ${isActive ? "font-bold border-b-4 border-primary" : "font-light"}
             `}
           >
-            <a className="w-full h-full block">{option.label}</a>
+            <a className="w-full h-full block">{option.zhCategoryName}</a>
           </li>
         );
       })}
