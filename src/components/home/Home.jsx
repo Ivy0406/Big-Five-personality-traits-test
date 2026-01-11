@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import TraitHero from "../components/result/TraitHero";
-import ShortButton from "../components/ui/ShortButton";
-import getTraitsData from "../data/traits-data";
+import TraitHero from "../result/TraitHero";
+import ShortButton from "../ui/ShortButton";
+import getTraitsData from "../../data/traits-data";
 
 function Home() {
   const [traitsData, setTraitsData] = useState(null);
@@ -54,7 +54,7 @@ function Home() {
   return (
     <>
       <TraitHero traitType="home" />
-      <div className="bg-neutral-main w-full py-24 px-5">
+      <div className="bg-neutral-main w-full h-1/2 py-24 px-5">
         <div className="w-full max-w-352.5 mx-auto flex flex-col items-center gap-4">
           <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-end">
             <h1 className="text-center lg:text-left text-5xl lg:text-[64px] leading-normal font-light text-text-main">
