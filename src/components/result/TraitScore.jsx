@@ -1,6 +1,6 @@
 import ScoreTitle from "./ScoreTitle";
 import ScoreDescription from "./ScoreDescription";
-import Button from "./button";
+import Button from "./Button";
 
 const TraitScore = ({
   scoreLevel,
