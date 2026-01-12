@@ -21,6 +21,7 @@ const Result = () => {
   isLastCategory,
   nextCategoryLabel,
   handleNextCategory,
+  backtoHome,
 } = useResultData();
 
   if (loading) {
@@ -39,7 +40,7 @@ const Result = () => {
       <TraitHero traitType={targetCategory.en} className="pt-6 flex-1">
         <div className="w-full max-w-355 mx-auto flex flex-col justify-between h-full pb-12.25">
           <div className="w-full px-8 flex flex-col justify-center items-center gap-4 xl:gap-0 xl:justify-between xl:flex-row">
-            <TraitNames traitNames={traitsNames} />
+            <TraitNames traitNames={traitsNames} onClick={backtoHome} />
             <Navbar
               options={categoriesList}
               activeKey={targetCategory?.en}
