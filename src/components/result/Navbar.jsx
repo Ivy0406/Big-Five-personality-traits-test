@@ -8,7 +8,7 @@ const Navbar = ({ options, activeKey, onSelect }) => {
             key={option.key}
             onClick={() => onSelect(option.key)}
             className={`
-              w-fit h-8 text-neutral-main cursor-pointer 
+              w-fit h-fit min-h-8 text-neutral-main cursor-pointer 
               hover:font-bold hover:border-b-4 hover:border-primary 
               ${isActive ? "font-bold border-b-4 border-primary" : "font-light"}
             `}
