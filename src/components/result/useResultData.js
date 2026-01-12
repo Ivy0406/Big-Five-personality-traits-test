@@ -27,6 +27,10 @@ export const useResultData = () => {
     loadData();
   }, [rawAnswers, navigate]);
 
+   const backtoHome = () => {
+    navigate("/");
+  };
+
   const calculatedResuts = useMemo(() => {
     if (!traitsData || !rawAnswers) {
       return null;
@@ -133,5 +137,6 @@ export const useResultData = () => {
     isLastCategory: nextedData.isLast,
     nextCategoryLabel: nextedData.nextLabel,
     handleNextCategory,
+    backtoHome
   };
 };

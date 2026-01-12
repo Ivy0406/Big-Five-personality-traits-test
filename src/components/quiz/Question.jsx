@@ -1,5 +1,5 @@
 
-const Question = ({ question, traitNames , className=""}) => {
+const Question = ({ onClick, question, traitNames , className=""}) => {
   return (
     <div className={`px-24 flex flex-col justify-end gap-30 xl:gap-112.25 ${className}`}>
       <div className="flex flex-col gap-4">
@@ -9,7 +9,7 @@ const Question = ({ question, traitNames , className=""}) => {
         </p>
       </div>
 
-      <div>
+      <div onClick={onClick} className="cursor-pointer">
         <p className="text-text-minor text-[16px] leading-normal">
           {traitNames?.zh}
         </p>
