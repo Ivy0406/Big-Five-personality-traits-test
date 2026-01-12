@@ -12,6 +12,7 @@ const Quiz = () => {
     totalQuestions,
     selectedOption,
     traitNames,
+    backtoHome,
     handleOptionSelected,
     handlePrevQuestion,
     handleNextQuestion,
@@ -38,6 +39,7 @@ const Quiz = () => {
           question={currentQuestion.problem} 
           traitNames={traitNames} 
           className="h-full pt-24 xl:pt-0"
+          onClick = {backtoHome}
         />
       </div>
       {/* 右側：作答區 */}

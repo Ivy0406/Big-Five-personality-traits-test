@@ -26,6 +26,10 @@ export const useQuizData = () => {
     loadData();
   }, []);
 
+  const backtoHome = () => {
+    navigate("/");
+  };
+
   const getSavedOption = (targetIndex, currentQuestions = questions) => {
     const targetQuestion = currentQuestions[targetIndex];
     if (!targetQuestion) return null;
@@ -99,6 +103,7 @@ export const useQuizData = () => {
     totalQuestions: questions.length,
     selectedOption,
     traitNames,
+    backtoHome,
     handleOptionSelected,
     handlePrevQuestion,
     handleNextQuestion,
