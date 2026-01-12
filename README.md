@@ -1,16 +1,101 @@
-# React + Vite
+ ## **五大性格特質心理測驗**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+這是一個基於 Abode Xd 設計稿開發的單頁式應用程式（Single Page Application）。在透過問卷分析使用者的五大性格特質（Big Five）：經驗開放性、盡責性、外向性、親和性與情緒不穩定性。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 👀 專案預覽
+![專案封面預覽](./public/og-cover.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 設計稿來源：[Design Link](https://xd.adobe.com/view/ccc4dd9e-4b8f-4491-4754-4049282e0d7a-baf5/grid/)
+
+## 🛠 使用技術 
+
+* **核心框架 (Core)**：React 19.2
+* **建構工具 (Build Tool)**：Vite 7.2 
+* **樣式處理 (Styling)**：Tailwind CSS 4.1
+* **路由管理 (Routing)**：React Router 7.11
+
+## 📂 專案架構 
+
+本專案使用 React + Vite 建構。
+
+```text
+BIG-FIVE-PERSONALITY-TRAITS-TEST
+├── .github/workflows/
+│   └── deploy.yml          
+│    # GitHub Actions 自動部署腳本
+├── public/
+│   ├── favicon.png         
+│   │   # 網站圖示
+│   └── og-cover.png        
+│       # 社群分享預覽圖 
+├── src/
+│   ├── assets/             
+│   │    # 靜態資源 (圖片、圖示等)
+│   ├── components/         
+│   │   │  # React 元件庫
+│   │   ├── home/           
+│   │   │      # 首頁相關元件
+│   │   ├── quiz/           
+│   │   │      # 測驗過程邏輯、題目卡片元件
+│   │   ├── result/         
+│   │   │      # 結果頁面、分數計算邏輯
+│   │   └── ui/             
+│   │         # 共用 UI 元件 (如按鈕)
+│   ├── data/
+│   │   └── traits-data.js  
+│   │         # 核心資料：透過API抓取題目庫
+│   ├── App.jsx             
+│   │    # 主應用程式元件 (包含路由設定)
+│   ├── main.jsx            
+│   │     # 專案進入點
+│   └── index.css           
+│        # 全域樣式與 Tailwind 引入
+├── index.html              
+│    # HTML 模板 (包含 Meta Tags 設定)
+├── vite.config.js          
+│    # Vite 設定檔 (包含 Base URL 設定)
+└── package.json            
+    # 專案依賴與腳本
+
+```
+
+## 🚀 啟動專案 
+請確認電腦已安裝 Node.js v.18 以上的版本。
+```
+npm install
+npm run dev
+```
+
+
+## 🤝 協作規範 
+🌱 **分支命名規範**
+
+類別 (Category) | 用途 (Usage)                       | 範例 (Example)
+---------------|-----------------------------------|----------------------------
+feature/       | 新增功能                           | feature/[branch-name]
+update/        | 更新、優化（UI & UX、改文案）         | update/[branch-name]
+fix/           | 修復 Bug                           | fix/[branch-name]
+hotfix/        | 修復重大 Bug                        | hotfix/[branch-name]
+chore/         | 初始化專案或環境建置 (npm 安裝)       | chore/[branch-name]
+
+💬 **Commit 訊息規範**
+* 「 類別 : 做的事」
+* 「：」後面要空格後，再打要做的事。
+
+
+類別  | 用途 
+---------------|------------------------------------------------------------
+feat           | 新增功能 
+update         | 修改既有項目或功能（UI / UX 微調、既有功能的行為優化）
+fix            | 修復 Bug 
+style          | 格式、風格（不影響程式碼運行的變動，如空白鍵、分號等）
+perf           | 改善效能 
+chore          | 建構程序或輔助工具的變動（如：npm 安裝、文件更新）
+refactor       | 重構（既不是修復 Bug 也不是新增功能的程式碼變動）
